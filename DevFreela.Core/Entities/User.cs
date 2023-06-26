@@ -7,9 +7,9 @@
             FullName = fullName;
             Email = email;
             BirthDate = birthDate;
+            CreatedAt = DateTime.Now;
             Active = true;
 
-            CreatedAt = DateTime.Now;
             Skills = new List<UserSkill>();
             OwnedProjects = new List<Project>();
             FreelanceProjects = new List<Project>();
@@ -20,6 +20,7 @@
         public DateTime BirthDate { get; private set; }
         public DateTime CreatedAt { get; private set; }
         public bool Active { get; set; }
+
         public List<UserSkill> Skills { get; private set; }
         public List<Project> OwnedProjects { get; private set; }
         public List<Project> FreelanceProjects { get; set; }
