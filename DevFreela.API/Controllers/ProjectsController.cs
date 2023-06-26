@@ -20,7 +20,7 @@ namespace DevFreela.API.Controllers
             _projectService = projectService;
         }
 
-        // api/projects/?query=net core
+        // api/projects?query=net core
         [HttpGet]
         public IActionResult Get(string query)
         {
@@ -43,7 +43,6 @@ namespace DevFreela.API.Controllers
             return Ok(project);
         }
 
-        // api/projects
         [HttpPost]
         public IActionResult Post([FromBody] NewProjectInputModel inputModel)
         {
@@ -55,7 +54,6 @@ namespace DevFreela.API.Controllers
             var id = _projectService.Create(inputModel);
 
             return CreatedAtAction(nameof(GetById), new { id = id }, inputModel);
-
         }
 
         // api/projects/2
@@ -107,6 +105,5 @@ namespace DevFreela.API.Controllers
 
             return NoContent();
         }
-
     }
 }

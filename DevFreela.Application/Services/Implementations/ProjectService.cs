@@ -2,16 +2,17 @@
 using DevFreela.Application.Services.Interfaces;
 using DevFreela.Application.ViewModels;
 using DevFreela.Core.Entities;
-using DevFreela.Core.Repositories;
 using DevFreela.Infrastructure.Persistence;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace DevFreela.Application.Services.Implementations
 {
     public class ProjectService : IProjectService
     {
         private readonly DevFreelaDbContext _dbContext;
+
         public ProjectService(DevFreelaDbContext dbContext)
         {
             _dbContext = dbContext;
